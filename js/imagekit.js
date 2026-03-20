@@ -15,6 +15,8 @@
 //   });
 // ============================================================
 
+import { getSession } from './cp-api.js';
+
 /**
  * Convert a File object to a base64 data URI string.
  * ImageKit's upload API accepts base64 strings directly.
@@ -50,7 +52,7 @@ export async function uploadToImageKit(file, options = {}) {
 
   // Resolve the authenticated user's JWT so the Edge Function can verify
   // the caller is a real logged-in user (not just the public anon key).
-  const session = await window.CP?.Auth?.getSession?.();
+  const session = await getSession();
   const userToken = session?.access_token || anonKey;
 
   // Validate file type client-side

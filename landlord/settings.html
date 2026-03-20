@@ -522,7 +522,7 @@
 <script type="module">
   import { supabase } from '../js/cp-api.js';
   import { requireAuth, getLandlordProfile, signOut } from '../js/cp-api.js';
-  import { uploadToImageKit } from '../js/imagekit.js';
+  import { uploadToImageKit } from '../js/imagekit.js?v=2';
 
   const session = await requireAuth('/landlord/login.html');
   if (!session) throw new Error();

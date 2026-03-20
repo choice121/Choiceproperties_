@@ -166,7 +166,7 @@
 
 <script type="module">
   import { requireAuth, getLandlordProfile, signOut, supabase } from '../js/cp-api.js';
-  import { uploadMultipleToImageKit } from '../js/imagekit.js';
+  import { uploadMultipleToImageKit } from '../js/imagekit.js?v=2';
 
   const _params    = new URLSearchParams(window.location.search);
   const _isAdmin   = _params.get('admin') === '1';
